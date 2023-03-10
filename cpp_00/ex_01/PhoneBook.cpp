@@ -44,7 +44,7 @@ int PhoneBook::_readInput() const {
             valid = true;
         } else {
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            std::cin.ignore(1000,'\n');
             std::cout << "Invalid index; please re-enter." << std::endl;
         }
     } while (!valid);

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact
 {
@@ -12,11 +13,17 @@ class Contact
 		std::string _nickname;
 		std::string _phoneNumber;
 		std::string _darkestSecret;
-
 		int			_index;
+
+		std::string _getInput(std::string str) const;
+		std::string _printLen(std::string str) const;
 	public :
 		Contact();
-		~Contact();		
+		~Contact();
+		void init(void);
+		void view(int index) const;
+		void display(int index) const;
+		void setIndex(int i);
 };
 
 #endif
