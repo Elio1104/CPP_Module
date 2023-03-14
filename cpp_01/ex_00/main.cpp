@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-int main()
+int main(void)
 {
 	{
 		std::cout << "Creating zombie on the stack. (Bob)" << std::endl;
