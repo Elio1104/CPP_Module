@@ -40,5 +40,11 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate( void )
 {
-	std::cout << "\033[1;31m<ScavTrap> - " << _name <<" is now guarding the Gate !\033[0m" << std::endl;
+	if (_hp > 0 && _mana > 0) {
+		_mana--;
+		std::cout << "\033[1;31m<ScavTrap> - " << _name <<" is now guarding the Gate !\033[0m" << std::endl;
+	} else if (_hp <= 0)
+		std::cout << "\033[1;31m<ScavTrap> - " << _name << " is KO!\033[0m" << std::endl;
+	else if (_mana <= 0)
+		std::cout << "\033[1;31m<ScavTrap> - " << _name << " got no mana to perform this action.\033[0m" << std::endl;
 }
