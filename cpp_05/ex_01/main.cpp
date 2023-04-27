@@ -1,16 +1,18 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main( void )
 {
+
     try {
-        Bureaucrat bureaucrat1("Leo", 1);
+        Bureaucrat bureaucrat("Leo",11);
+        Form form("formName", 10);
 
-        std::cout << bureaucrat1 << std::endl;
+        bureaucrat.signForm(form);
 
-        //bureaucrat1.incrementGrade();
-        bureaucrat1.decrementGrade();
-    } catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << e.what() << std::endl;
+        std::cout << form ;
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }

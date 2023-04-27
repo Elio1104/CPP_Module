@@ -2,6 +2,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 private :
@@ -21,6 +24,8 @@ public :
 
 	void incrementGrade();
 	void decrementGrade();
+
+	void signForm( Form& Form );
 
 	/* ---------------- Exception Classes ---------------- */
 

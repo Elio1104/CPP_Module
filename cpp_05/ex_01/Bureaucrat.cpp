@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name( other._name ) , _grade(
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if ( this != &other )
-        _grade = other._grade;
+        _grade = other.getGrade();
     return *this;
 }
 
@@ -43,6 +43,15 @@ void    Bureaucrat::decrementGrade() {
     if ( _grade + 1 > 150 )
         throw Bureaucrat::GradeTooLowException();
     _grade++;
+}
+
+void    Bureaucrat::signForm( Form& form ) {
+    try {
+        form.beSigned( *this );
+        std::cout << *this << " signed " << form.getName() << std::endl;
+    } catch (Form::GradeTooLowException &e) {
+        std::cerr << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 
 /* ---------------- Exception Classes ---------------- */
