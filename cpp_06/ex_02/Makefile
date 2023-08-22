@@ -1,6 +1,6 @@
 NAME		= Identify
 	
-CC			= g++
+CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
