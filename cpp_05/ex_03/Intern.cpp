@@ -30,9 +30,12 @@ Form* Intern::makeForm(std::string name, std::string target) {
 
 	for (int i(0); i < 3; i++) {
 		if ( name == formNames[i] ) {
+            for (int j(i + 1); j < 3; j++)
+                delete forms[j];
 			std::cout << "Intern creates " << name << std::endl;
 			return forms[i];
 		}
+        delete forms[i];
 	}
 	std::cout << "Intern cannot create " << name << " form" << std::endl;
     return 0;

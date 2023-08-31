@@ -9,7 +9,7 @@ int main( void )
 {
 	srand(time(NULL));
     try {
-        Bureaucrat bureaucrat("Leo", 2); // error with 200
+        Bureaucrat bureaucrat("Leo", 2);
 		{
 			Intern intern1;
 			Form* form1 = intern1.makeForm("shrubbery creation", "Shrubbery");
