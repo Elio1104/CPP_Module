@@ -1,7 +1,7 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Intern {
 public:

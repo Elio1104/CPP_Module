@@ -1,7 +1,7 @@
 #ifndef ROBOTOMY_HPP
 #define ROBOTOMY_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <cstdlib>
 
 class RobotomyRequestForm : public Form {
