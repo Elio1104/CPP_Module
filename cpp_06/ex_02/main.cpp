@@ -6,7 +6,11 @@ class B : public Base {};
 class C : public Base {};
 
 Base* generate ( void ) {
-    std::srand(time(0));
+    static bool srandExecuted = false; 
+    if (!srandExecuted) {
+        std::srand(time(0));
+        srandExecuted = true;
+    }
     int i = std::rand() % 3;
     if ( i == 0 ) {
         std::cout << "Creating Base A" << std::endl;
