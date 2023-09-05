@@ -6,6 +6,7 @@ class B : public Base {};
 class C : public Base {};
 
 Base* generate ( void ) {
+    std::srand(time(0));
     int i = std::rand() % 3;
     if ( i == 0 ) {
         std::cout << "Creating Base A" << std::endl;
@@ -51,7 +52,6 @@ void identify ( Base& p ) {
 }
 
 int main ( void ) {
-    std::srand(time(0));
     std::cout << " ------------------- Generating ------------------- " << std::endl;
     Base*   a = generate();
     identify( a );
