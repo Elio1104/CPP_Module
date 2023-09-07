@@ -6,7 +6,6 @@
 
 int main( void )
 {
-	srand(time(NULL));
     try {
         Bureaucrat bureaucrat("Leo", 2); // error with 200
         ShrubberyCreationForm form1("Shrubbery");

@@ -7,7 +7,6 @@
 
 int main( void )
 {
-	srand(time(NULL));
     try {
         Bureaucrat bureaucrat("Leo", 2);
 		{
@@ -15,6 +14,8 @@ int main( void )
 			Form* form1 = intern1.makeForm("shrubbery creation", "Shrubbery");
 			Form* form2 = intern1.makeForm("robotomy request", "Robotomy");
 			Form* form3 = intern1.makeForm("presidential pardon", "President");
+            bureaucrat.signForm(*form2);
+            bureaucrat.executeForm(*form2);
 			delete form1;
 			delete form2;
 			delete form3;
