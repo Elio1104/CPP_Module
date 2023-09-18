@@ -1,6 +1,6 @@
 #include <iostream>
 #include "colors.h"
-#include <list>
+#include <deque>
 #include <vector>
 #include <time.h>
 
@@ -8,7 +8,7 @@ class PmergeMe {
     private :
         static const int K = 5;
         char **_unsorted;
-        std::list<int> _list;
+        std::deque<int> _deque;
         std::vector<int> _vector;
 
     public :
@@ -25,4 +25,8 @@ class PmergeMe {
         void printVector();
         void insertionVector(int beg, int end);
         void mergeVector(int beg, int mid, int end);
+        void sortDeque(int beg, int end);
+        void printDeque();
+        void insertionDeque(int beg, int end);
+        void mergeDeque(int beg, int mid, int end);
 };
