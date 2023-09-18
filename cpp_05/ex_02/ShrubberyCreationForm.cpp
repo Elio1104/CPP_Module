@@ -17,7 +17,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 		throw Form::notSignedException();
 	else if(executor.getGrade() > this->getGradeToExecute())
 		throw Form::GradeTooLowException();
-    std::ofstream file( (this->getName() + "_shrubbery").c_str() );
+    std::ofstream file( (this->_target + "_shrubbery").c_str() );
     file << "                      ___" << std::endl;
     file << "                _,-'\"\"   \"\"\"\"`--." << std::endl;
     file << "             ,-'          __,,-- \\" << std::endl;

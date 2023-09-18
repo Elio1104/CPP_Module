@@ -19,8 +19,8 @@ Intern& Intern::operator=( const Intern& other ) {
 Form* Intern::makeForm(std::string name, std::string target) {
 	std::string formNames[] = {
 		"robotomy request",
-		"presidential pardon",
-		"shrubbery creation"
+		"shrubbery creation",
+		"presidential pardon"
 	};
 	Form* forms[] = {
 		new RobotomyRequestForm( target ),

@@ -13,6 +13,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator=( RobotomyRequestForm& other 
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+    static bool srandExecuted = false;
+    if (!srandExecuted) {
+        std::srand(time(0));
+        srandExecuted = true;
+    }
 	if(this->getSigned() == false)
 		throw Form::notSignedException();
 	else if(executor.getGrade() > this->getGradeToExecute())
