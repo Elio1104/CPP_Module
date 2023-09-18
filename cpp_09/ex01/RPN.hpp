@@ -10,7 +10,7 @@ class RPN {
         std::stack<char>    _operators;
 
     public :
-        RPN( std::string database );
+        RPN( std::string input );
         RPN( const RPN& other );
         ~RPN( void ) ;
         RPN& operator=( const RPN& other );
