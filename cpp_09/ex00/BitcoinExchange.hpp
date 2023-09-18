@@ -33,6 +33,7 @@ class BitcoinExchange {
         int checkDay( std::string day );
         int checkMonth( std::string month );
         int checkYear( std::string year );
+        int checkDateValidity( std::string year, std::string month , std::string day );
         void findDate( std::string date, float val );
         std::string decreaseDate( std::string date );
 };

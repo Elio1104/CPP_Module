@@ -49,7 +49,7 @@ void BitcoinExchange::error(std::string type)
 }
 
 void BitcoinExchange::readInputFile( void ) {
-    std::ifstream   input( _inputFile ) ;
+    std::ifstream   input( _inputFile.c_str() ) ;
     std::string     line ;
 
     if ( input.fail() )
@@ -97,7 +97,40 @@ int BitcoinExchange::checkDate( std::string date ) {
         return -1;
     if ( checkDay( day ) )
         return -1;
+    if ( checkDateValidity( year, month, day ) )
+        return -1;
     return 0;
+}
+int BitcoinExchange::checkDateValidity(std::string year, std::string month, std::string day) {
+    int y = atoi(year.c_str());
+    int m = atoi(month.c_str());
+    int d = atoi(day.c_str());
+
+    bool isLeapYear = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+
+    int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (isLeapYear) {
+        daysInMonth[2] = 29;
+    }
+
+    if (m < 1 || m > 12) {
+        std::cout << FRED("Error: Month out of range => ") << month << std::endl;
+        return (-1);
+    }
+
+    if (d < 1 || d > daysInMonth[m]) {
+        std::cout << FRED("Error: Day out of range for month => ") << day << std::endl;
+        return (-1);
+    }
+
+    if ( d == 1 && y == 2009 && m == 1) {
+        std::cout << FRED("Error: Date out of range => ") << year << "-" << month << "-" << day << std::endl;
+        return (-1);
+    }
+
+
+    return (0);
 }
 
 int BitcoinExchange::checkYear( std::string year ) {
