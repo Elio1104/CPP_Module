@@ -21,10 +21,14 @@ class PmergeMe {
         void readInput();
         void printArray();
         void sort();
+
+        /*---------------- Vector ----------------*/
         void sortVector(int beg, int end);
         void printVector();
         void insertionVector(int beg, int end);
         void mergeVector(int beg, int mid, int end);
+
+        /*---------------- Deque ----------------*/
         void sortDeque(int beg, int end);
         void printDeque();
         void insertionDeque(int beg, int end);
