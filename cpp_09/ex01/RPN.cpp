@@ -69,6 +69,8 @@ void RPN::singleOperation( void ) {
 			_numbers.push( operand1 - operand2 );
 			break;
 		case '/':
+            if (operand2 == 0)
+                error("Can't divide by 0.");
 			_numbers.push( operand1 / operand2 );
 			break;
 		default:
