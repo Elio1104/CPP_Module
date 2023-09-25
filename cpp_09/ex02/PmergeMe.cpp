@@ -37,6 +37,8 @@ void PmergeMe::readInput() {
 				error( "input isn't digit.");
 			j++;
 		}
+        if (atol(_unsorted[i]) > 2147483647)
+            error("input is larger than max int.");
 		_vector.push_back(atoi(_unsorted[i]));
 		_deque.push_back(atoi(_unsorted[i]));
 		i++;

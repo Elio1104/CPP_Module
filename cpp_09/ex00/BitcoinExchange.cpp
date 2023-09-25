@@ -175,12 +175,20 @@ int BitcoinExchange::checkConnector( std::string connector ) {
 }
 
 float BitcoinExchange::checkValue( std::string value ) {
+    if ( value.size() == 0 ) {
+        std::cout << FRED( "Error : No value found." ) << std::endl;
+        return ( -1 ) ;
+    }
     float val = atof( value.c_str() );
+    if (val == 0 && value.find("0") != 0) {
+        std::cout << FRED( "Error : Not digit." ) << std::endl;
+        return ( -1 ) ;
+    }
     if ( value.find( "-" ) == 0 ) {
         std::cout << FRED( "Error : Not a positive number." ) << std::endl;
         return ( -1 ) ;
     }
-    if ( value.size() > 4 || val > 1000 ) {
+    if ( val > 1000 ) {
         std::cout << FRED( "Error : Too large a number." ) << std::endl;
         return ( -1 ) ;
     }
