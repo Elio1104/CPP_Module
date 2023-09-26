@@ -36,6 +36,8 @@ void RPN::readInput( void ) {
 				_operators.push(_input[i]);
 			if (_operators.size() >= 1 && _numbers.size() >= 2)
 				singleOperation();
+            if (_operators.size() >= 1 && (_numbers.size() <= _operators.size()))
+				error("Invalid RPN.");
 		}
     }
     if (_operators.size() != 0 || _numbers.size() != 1 )

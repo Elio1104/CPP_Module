@@ -136,7 +136,7 @@ int BitcoinExchange::checkDateValidity(std::string year, std::string month, std:
 int BitcoinExchange::checkYear( std::string year ) {
     int	y = atoi(year.c_str());
 
-	if (y > 2022 || y < 2009)
+	if (y < 2009)
 	{
 		std::cout << FRED("Error: Year out of range => ") << year << std::endl;
 		return (-1);
